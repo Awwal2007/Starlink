@@ -1,0 +1,86 @@
+.orders-container {
+  padding: 20px;
+  background: #000;
+  color: #fff;
+  font-family: "DIN_Regular", Roboto, Arial, Verdana, Geneva, sans-serif;
+}
+
+.orders-container h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.order-search {
+  background: #111;
+  color: #ccc;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  /* margin-bottom: 16px; */
+  width: 250px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin-bottom: 3px; */
+  /* overflow-y: ; */
+  font-size: 12px;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.item-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-cell img {
+  width: 40px;
+  height: auto;
+}
+
+.status-badge {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status-badge.shipped {
+  background-color: rgba(0, 128, 0, 0.2);
+  color: #00ff88;
+  border: 1px solid #00ff88;
+}
+
+.status-badge.processing {
+  background-color: #444;
+  color: #bbb;
+  border: 1px solid #888;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  font-size: 14px;
+}
+.p-button{
+    background: none;
+    border: none;
+    color: white;
+}
+option{
+    color: black;
+}
+.o-img{
+    border-radius: 5px;
+}
