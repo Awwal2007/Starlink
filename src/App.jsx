@@ -3,7 +3,7 @@ import { Toaster } from "sonner";
 import Navbar from "./components/Navbar";
 import SigninForm from "./components/signInForm";
 import AuthProvider from "./contexts/AuthContext";
-import "./Index.css"
+import "./App.css"
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Subscription from "./components/Subscription";
