@@ -45,10 +45,10 @@ const Subscription = () => {
                 </thead>
                 <tbody className='table-body'>
                 <tr>
-                    <td>Residential</td>
+                    <td>Business</td>
                     <td>Kilburn Ln</td>
                     <td>
-                    <span className="status-badge suspended">Suspended</span>
+                    <span className="status-badge suspended">Obstructed View</span>
                     </td>
                 </tr>
                 </tbody>

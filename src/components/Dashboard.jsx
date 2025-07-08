@@ -40,7 +40,7 @@ const Dashboard = () => {
             <div className="warning-banner">
                 <span style={{alignItems:"center", display: "flex"}}>
                     <ErrorOutlineOutlinedIcon/> 
-                    <div style={isMobile ? {fontSize: "12px", marginLeft: "10px"} : {marginLeft: "10px"}}>Your starlink has and opstructed view of sky. Please change to a business plan.</div>
+                    <div style={isMobile ? {fontSize: "12px", marginLeft: "10px"} : {marginLeft: "10px"}}>Your starlink has an obstructed view of sky. Please change to a business plan.</div>
                 </span>
                 <Link to="/billing">
                     <button className='view-billing-button' >View Billing</button>
@@ -57,7 +57,7 @@ const Dashboard = () => {
                             £0.00 
                         </div>
                         <span className="Unpaid">
-                            <ErrorOutlineOutlinedIcon />
+                            <ErrorOutlineOutlinedIcon style={{color: "green"}} />
                         </span>
                     </div>
                 </div>
