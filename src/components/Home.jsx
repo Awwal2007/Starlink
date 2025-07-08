@@ -57,7 +57,7 @@ const Home = () => {
                     <li><a href="#">SERVICE PLANS</a></li>
                     <li><a href="#">VIDEO GUIDES</a></li>
                     <li><a href="#">TECHNOLOGY</a></li>
-                    <li><a href="#">UPDATES</a></li>
+                    <li><Link to="/admin-login">ADMIN</Link></li>
                     <li><a href="#">CUSTOMER STORIES</a></li>
                     </ul>
                 </div>
@@ -133,13 +133,13 @@ const Home = () => {
                         <h2 className="mb-3">GET ONLINE IN MINUTES</h2>
                         <p>Set up Starlink with just two steps. Instructions work in either order:</p>
                         <div className="steps my-3">
-                        <p><strong>1 PLUG IT IN</strong></p>
-                        <p><strong>2 POINT AT SKY</strong></p>
+                            <p><strong>1 PLUG IT IN</strong></p>
+                            <p><strong>2 POINT AT SKY</strong></p>
                         </div>
                         <p className="note mb-4">Starlink requires an unobstructed view of the sky. Download the Starlink app to determine your best install location.</p>
                         <div className="d-flex flex-wrap gap-3">
-                        <a href="#" className="download-btn">DOWNLOAD FOR ANDROID ›</a>
-                        <a href="#" className="download-btn">DOWNLOAD FOR IOS ›</a>
+                            <a href="#" className="download-btn">DOWNLOAD FOR ANDROID ›</a>
+                            <a href="#" className="download-btn">DOWNLOAD FOR IOS ›</a>
                         </div>
                     </div>
 
@@ -162,7 +162,7 @@ const Home = () => {
 
                         
                         <div className="col-lg-6">
-                            <img  alt="Flexible Service Plans" className="img-fluid w-100 h-100 object-fit-cover"/>
+                            <img src={flexible} alt="Flexible Service Plans" className="img-fluid w-100 h-100 object-fit-cover"/>
                         </div>
 
                     </div>
