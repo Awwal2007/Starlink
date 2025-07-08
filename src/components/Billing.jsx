@@ -80,7 +80,7 @@ const Billing = () => {
             <div className="warning-banner">
                 <span style={{alignItems:"center", display: "flex"}}>
                     <ErrorOutlineOutlinedIcon/> 
-                    <div style={{marginLeft: "10px"}}>Your service has been disabled due to a hardware issue. Please ensure all hardware are functioning.</div>
+                    <div style={{marginLeft: "10px"}}>Your starlink has an obstructed view of sky. Please change to a business plan.</div>
                 </span>
             </div>
             <h2 className='billing' >Billing</h2>
