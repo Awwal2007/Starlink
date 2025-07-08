@@ -67,7 +67,7 @@ const Billing = () => {
             if(error.message === "Token Expired, please login again"){
                 toast.error("Your Token Expired, Please Login Again")
                 setTimeout(() => {
-                    navigate("/")
+                    navigate("/signin")
                 }, 1000);
             }     
         }
@@ -92,7 +92,7 @@ const Billing = () => {
                             <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Balance Due</h2>
                             <div className="balance-amount">
                                 <div style={{display: 'inline', marginRight:"8px"}}>
-                                    £75.00 
+                                    £0.00 
                                 </div>
                                 <span className="Unpaid">
                                     <ErrorOutlineOutlinedIcon />
@@ -110,7 +110,7 @@ const Billing = () => {
                             <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Billing Cycle</h2>
                             <div className="balance-amount">
                                 <p style={{display: 'inline', marginRight:"8px", fontSize: "15px"}}>
-                                    No subscriptions have been added to this account.
+                                    Yearly subscriptions have been added to this account.
                                 </p>
                                 {/* <span className="Unpaid">
                                     <ErrorOutlineOutlinedIcon />    
@@ -128,7 +128,7 @@ const Billing = () => {
                             <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Payment Method</h2>
                             <div className="balance-amount">
                                 <div style={{display: 'inline', marginRight:"8px", fontSize: "15px"}}>
-                                   <p> Muhammad Amir Masoom</p>
+                                    <p>Muhammad Amir Masoom</p>
                                     <p>MC ending in 1371</p>
                                     <p>Expires: 9/25</p>
                                 </div>
@@ -160,28 +160,28 @@ const Billing = () => {
                     </thead>
                     <tbody className='billing-tbody'>
                         <tr>
-                            <td>5/17/2025</td>
-                            <td>5/17/2025</td>
+                            <td>12/16/2024</td>
+                            <td>12/18/2024</td>
                             <td>Subscription</td>
                             <td>INV-GBR-2198603-40199-19</td>
                             <td>Credit Card..</td>
-                            <td>£75.00</td>
-                            <td>£75.00</td>
+                            <td>£300.00</td>
+                            <td>£300.00</td>
                             <td style={{textAlign: "center", display: "flex", justifyContent:"space-between", alignItems:"center"}}>
-                                <div className='billing-overdue'>Overdue</div>
+                                <div className='billing-paid'>Paid</div>
                                 <button className='download-button' onClick={() => handleDownload('existing')} >
                                     <img src={downloadBtn} alt="" />
                                 </button>
                             </td>
                         </tr>
                         <tr>
-                            <td>5/17/2025</td>
-                            <td>5/17/2025</td>
+                            <td>12/16/2024</td>
+                            <td>12/18/2024</td>
                             <td>Subscription</td>
-                            <td>INV-GBR-2198603-40199-19</td>
+                            <td>INV-GBT-2198603-40199-19</td>
                             <td>Credit Card..</td>
-                            <td>£75.00</td>
-                            <td>£75.00</td>
+                            <td>£900.00</td>
+                            <td>£900.00</td>
                             <td style={{textAlign: "center", display: "flex", justifyContent:"space-between", alignItems:"center"}}>
                                 <div className='billing-paid'>Paid</div>
                                 <button className='download-button' onClick={() => handleDownload('existing2')} >

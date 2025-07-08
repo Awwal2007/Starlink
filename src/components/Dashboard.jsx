@@ -66,8 +66,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className="cards">
-                <div style={{flex: "calc(100%)", alignItems: "center"}} className="card">
+            <div className="dashboard-cards">
+                <div style={{flex: "calc(100%)", alignItems: "center"}} className="dashboard-card">
                     {/* <CardMembershipOutlinedIcon /> */}
                     <img style={{width: "20px", height: "20px"}} className='icon-white' src={subscription} alt="" />
                     <div style={{marginLeft: "20px"}}>
@@ -75,7 +75,7 @@ const Dashboard = () => {
                         <p>Manage Starlink service</p>
                     </div>
                 </div>
-                <div className="card">
+                <div className="dashboard-card">
                     {/* <LocalMallOutlinedIcon />*/}
                     <img className='icon-white' src={order} alt="" />
                     <div style={{marginLeft: "20px"}}>
@@ -83,7 +83,7 @@ const Dashboard = () => {
                         <p>View order history</p>
                     </div>
                 </div>
-                <div className="card">
+                <div className="dashboard-card">
                     {/* <AccountBalanceWalletOutlinedIcon /> */}
                     <img className='icon-white' src={billing} alt="" />
                     <div style={{marginLeft: "20px"}}>
@@ -91,7 +91,7 @@ const Dashboard = () => {
                         <p>View invoices and payments</p>
                     </div>
                 </div>
-                <div className="card">
+                <div className="dashboard-card">
                     {/* <EmailOutlinedIcon /> */}
                     <img className='icon-white' src={message} alt="" />
                     <div style={{marginLeft:"20px"}}>
@@ -99,7 +99,7 @@ const Dashboard = () => {
                         <p>View support tickets</p>
                     </div>
                 </div>
-                <div className="card">
+                <div className="dashboard-card">
                     {/* <SettingsOutlinedIcon /> */}
                     <img className='icon-white' src={settings} alt="" />
                     <div style={{marginLeft: "20px"}}>

@@ -19,16 +19,16 @@
     margin-top: 10px;
     display: flex;
     gap: 10px;
-
 }
 .billing-box{    
     background-color: rgb(18,18,18);
     padding: 4px 16px;
     padding-top: 16px;
     width: 100%;
-    /* height: 10vh; */
+    /* height: 33vh; */
     border: 1px solid var(--divider);
     border-radius: 4px;
+    line-height: 15px;
 }
 .invoice{
     margin-top: 10px;

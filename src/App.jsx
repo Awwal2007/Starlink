@@ -15,6 +15,7 @@ import Admin from "./components/Admin";
 import AdminMessage from "./components/AdminMessage";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Billing from "./components/Billing";
+import Home from "./components/Home";
 const AppContent = () => {
   const location = useLocation();
   const hideHeaderRoutes = [
@@ -25,7 +26,8 @@ const AppContent = () => {
     '/message/new-ticket',
     '/admin',
     '/admin-message/:userId',
-    '/billing'
+    '/billing',
+    '/'
   ];
 
   const shouldHideHeader = hideHeaderRoutes.some((route) => {
@@ -42,7 +44,8 @@ const AppContent = () => {
 
         <AuthProvider>
           <Routes>
-            <Route path="/"  element={<SigninForm />}/>
+            <Route path="/signIn"  element={<SigninForm />}/>
+            <Route path="/"  element={<Home />}/>
             <Route path="/dashboard"  element={<Dashboard />}/>
             <Route path="/subscription" element={<Subscription />} />
             <Route path="/order" element={<Order />} />

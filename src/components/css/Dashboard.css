@@ -151,12 +151,14 @@ body{
     cursor: pointer;
     border-radius: 4px;
 }
-.cards {
+.dashboard-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    font-size: 13px;
+
 }
-.card {
+.dashboard-card {
     background-color: none;
     flex: 1 1 calc(50% - 20px);
     padding: 20px;
@@ -164,8 +166,10 @@ body{
     border: 1px solid var(--divider);
     display: flex;
 }
-.card h3 {
+.dashboard-card h3 {
     margin-top: 0;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .profile{
