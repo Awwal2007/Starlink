@@ -40,7 +40,7 @@ const Dashboard = () => {
             <div className="warning-banner">
                 <span style={{alignItems:"center", display: "flex"}}>
                     <ErrorOutlineOutlinedIcon/> 
-                    <div style={isMobile ? {fontSize: "12px", marginLeft: "10px"} : {marginLeft: "10px"}}>Your service has been disabled due to a billing issue. Please ensure all bills are paid.</div>
+                    <div style={isMobile ? {fontSize: "12px", marginLeft: "10px"} : {marginLeft: "10px"}}>Your starlink has and opstructed view of sky. Please change to a business plan.</div>
                 </span>
                 <Link to="/billing">
                     <button className='view-billing-button' >View Billing</button>
@@ -51,7 +51,7 @@ const Dashboard = () => {
 
             <div className="balance-box">
                 <div style={{flexGrow: "2"}}>
-                    <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Balance Due</h2>
+                    <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Balance Due - 16/12/2025</h2>
                     <div className="balance-amount">
                         <div style={{display: 'inline', marginRight:"8px"}}>
                             £0.00 
