@@ -54,7 +54,7 @@ const Dashboard = () => {
                     <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Balance Due</h2>
                     <div className="balance-amount">
                         <div style={{display: 'inline', marginRight:"8px"}}>
-                            £75.00 
+                            £0.00 
                         </div>
                         <span className="Unpaid">
                             <ErrorOutlineOutlinedIcon />

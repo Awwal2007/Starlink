@@ -80,7 +80,7 @@ const Billing = () => {
             <div className="warning-banner">
                 <span style={{alignItems:"center", display: "flex"}}>
                     <ErrorOutlineOutlinedIcon/> 
-                    <div style={{marginLeft: "10px"}}>Your service has been disabled due to a billing issue. Please ensure all bills are paid.</div>
+                    <div style={{marginLeft: "10px"}}>Your service has been disabled due to a hardware issue. Please ensure all hardware are functioning.</div>
                 </span>
             </div>
             <h2 className='billing' >Billing</h2>
@@ -164,7 +164,7 @@ const Billing = () => {
                             <td>12/18/2024</td>
                             <td>Subscription</td>
                             <td>INV-GBR-2198603-40199-19</td>
-                            <td>Credit Card..</td>
+                            <td>Bank Transfer..</td>
                             <td>£300.00</td>
                             <td>£300.00</td>
                             <td style={{textAlign: "center", display: "flex", justifyContent:"space-between", alignItems:"center"}}>
@@ -179,7 +179,7 @@ const Billing = () => {
                             <td>12/18/2024</td>
                             <td>Subscription</td>
                             <td>INV-GBT-2198603-40199-19</td>
-                            <td>Credit Card..</td>
+                            <td>Bank Transfer..</td>
                             <td>£900.00</td>
                             <td>£900.00</td>
                             <td style={{textAlign: "center", display: "flex", justifyContent:"space-between", alignItems:"center"}}>
@@ -203,7 +203,7 @@ const Billing = () => {
                     <button className='p-button'>{"\u25B6"}</button>
                 </div>
             </div>
-            <div className="billing-payment">
+            {/* <div className="billing-payment">
                 <h2 className='invoice'>Payments</h2>
                 <div style={{backgroundColor: "rgb(18,18,18)"}} className='billing-payment-container'>
                     <div>Date</div>
@@ -231,7 +231,7 @@ const Billing = () => {
                     <button className='p-button'>{"\u25B6"}</button>
                 </div>
 
-            </div>
+            </div> */}
         </div>
     </div>
   )
