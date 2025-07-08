@@ -25,19 +25,13 @@ const Message = () => {
     const openModal = () => navigate("new-ticket");
     const tickets = [
         {
-            title: "Service Disconnected Despite Payment",
-            id: "TIK-5242811-29148-45",
-            status: "Resolved",
+            title: "Internet",
+            id: "TIK-51243812-57237-39",
+            status: "Unresolved",
             updated: "6/18/2025",
             unread: true,
         },
-        {
-            title: "Service Disconnected Despite Paid Invoice till Dec 2025",
-            id: "TIK-5243563-53506-45",
-            status: "Archived",
-            updated: "6/11/2025",
-            unread: false,
-        },
+        
     ];
   return showModal ? <Outlet /> :
         
