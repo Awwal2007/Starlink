@@ -1,46 +1,55 @@
 import React from 'react'
 import DashNav from './DashNav'
 import "./css/Order.css"
-import image from '../assets/StarlinkCable_500x500.webp'
+// import image from '../assets/StarlinkCable_500x500.webp'
 
 const Order = () => {
     const orders = [
+        // {
+        //     placed: "10/27/2023",
+        //     item: "150ft Replacement Cable",
+        //     image: image,
+        //     orderNumber: "ORD-28498784-67131-11",
+        //     trackingNumber: "9765450951",
+        //     delivery: "10/30/2023 - 11/5/2023",
+        //     status: "Shipped",
+        // },
+        // {
+        //     placed: "10/25/2023",
+        //     item: "150ft Replacement Cable",
+        //     image: image,
+        //     orderNumber: "ORD-28390317-19044-9",
+        //     trackingNumber: "8271134001",
+        //     delivery: "10/27/2023 - 11/2/2023",
+        //     status: "Shipped",
+        // },
+        // {
+        //     placed: "10/12/2023",
+        //     item: "150ft Replacement Cable + 1",
+        //     image: image,
+        //     orderNumber: "ORD-27486164-37625-4",
+        //     trackingNumber: "ORD-27486164-37625-4",
+        //     delivery: "10/24/2023 - 10/30/2023",
+        //     status: "Processing",
+        // },
         {
-            placed: "10/27/2023",
-            item: "150ft Replacement Cable",
-            image: image,
-            orderNumber: "ORD-28498784-67131-11",
-            trackingNumber: "9765450951",
-            delivery: "10/30/2023 - 11/5/2023",
-            status: "Shipped",
-        },
-        {
-            placed: "10/25/2023",
-            item: "150ft Replacement Cable",
-            image: image,
-            orderNumber: "ORD-28390317-19044-9",
-            trackingNumber: "8271134001",
-            delivery: "10/27/2023 - 11/2/2023",
-            status: "Shipped",
-        },
-        {
-            placed: "10/12/2023",
-            item: "150ft Replacement Cable + 1",
-            image: image,
-            orderNumber: "ORD-27486164-37625-4",
-            trackingNumber: "ORD-27486164-37625-4",
-            delivery: "10/24/2023 - 10/30/2023",
-            status: "Processing",
-        },
-        {
-            placed: "10/12/2023",
-            item: "Starlink Standard Actuated Kit",
-            image: image,
-            orderNumber: "ORD-27480063-42333-8",
-            trackingNumber: "ORD-27480063-42333-8",
+            placed: "-",
+            item: "-",
+            image: "-",
+            orderNumber: "-",
+            trackingNumber: "-",
             delivery: "-",
-            status: "Shipped",
+            status: "",
         },
+        // {
+        //     placed: "10/12/2023",
+        //     item: "Starlink Standard Actuated Kit",
+        //     image: image,
+        //     orderNumber: "ORD-27480063-42333-8",
+        //     trackingNumber: "ORD-27480063-42333-8",
+        //     delivery: "-",
+        //     status: "Shipped",
+        // },
     ];
   return (
     <div>
@@ -71,7 +80,7 @@ const Order = () => {
                     <tr key={i}>
                     <td>{o.placed}</td>
                     <td className="item-cell">
-                        <img className='o-img' src={o.image} alt="item" />
+                        {/* <img className='o-img' src={o.image} alt="item" /> */}
                         <div>{o.item}</div>
                     </td>
                     <td>{o.orderNumber}</td>
@@ -87,7 +96,7 @@ const Order = () => {
                     <td>{o.delivery}</td>
                     <td>
                         <span
-                        className={`status-badge ${
+                        className={`status-badg ${
                             o.status === "Shipped"
                             ? "shipped"
                             : o.status === "Processing"
@@ -95,7 +104,8 @@ const Order = () => {
                             : ""
                         }`}
                         >
-                        {o.status}
+                        {/* {o.status} */}
+                        {"-"}
                         </span>
                     </td>
                     </tr>

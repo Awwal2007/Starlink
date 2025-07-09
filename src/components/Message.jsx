@@ -33,7 +33,7 @@ const Message = () => {
         },
         
     ];
-  return showModal ? <Outlet /> :
+    return showModal ? <Outlet /> :
         
     (<div>
         <DashNav messageP={"active"} />
@@ -86,13 +86,13 @@ const Message = () => {
 
                 <div className="pagination">
                     <span>Rows per page:</span>
-                    <select>
+                    <select className='bg-dark'>
                     <option>5</option>
                     <option>10</option>
                     </select>
                     <span>1 - 2 of 2</span>
-                    <button>{"<"}</button>
-                    <button>{">"}</button>
+                    <button className='btn'>{"<"}</button>
+                    <button className='btn'>{">"}</button>
                 </div>
             </div>
         </div>
