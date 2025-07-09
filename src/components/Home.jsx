@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 
 import { Link } from 'react-router-dom'
@@ -13,14 +13,28 @@ import flexible from "../assets/IMG-20250707-WA0254.jpg"
 import engineerImg from "../assets/home_feature3_d.webp"
 
 const Home = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 50); // Change `50` to whatever threshold you want
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div className='body' style={{backgroundImage: `url(${background})`, backgroundAttachment: "fixed", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
-        <div className="top-banner">
+        {/* <div className="top-banner">
             1 month of FREE service upon activation between May 20th and June 16th. Residential plans only.
-        </div>
+        </div> */}
 
         <section style={{background: `url(${heroimg})`, backgroundAttachment: "", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundColor: "black"}}>
-            <nav className="navbar">
+            <nav className={`navbar ${
+      scrolled ? 'scrolled' : 'transparent'
+    }`}>
                 <div className="navbar-left">
                     <img className="logo" src={logo} alt="Starlink"/>
                     <ul className="nav-links-left">

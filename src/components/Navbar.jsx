@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from './MediaQuery';
 
+import logo from "../assets/logo_white.png"
+
 const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false);
     // const [matches, setMatches] = useState(false);
@@ -9,12 +11,13 @@ const Navbar = () => {
   return (
     <div className='nav-container'>
         <div className='nav-side-1'>
-            <h2>STARLINK</h2>
+            {/* <h2>STARLINK</h2> */}
+            <img style={{height: "30px"}} src={logo} alt="" />
         </div>
-        <div className='nav-side-2'>
+        {/* <div className='nav-side-2'>
             <a className='nav-link' href="">RESIDENTIAL</a>
             <a className='nav-link' href="">ROAM</a>
-        </div>
+        </div> */}
         <div className='nav-side-3'>
             <a className='nav-link' href="">PERSONAL</a>
             <div style={{

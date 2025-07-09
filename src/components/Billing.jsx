@@ -95,7 +95,7 @@ const Billing = () => {
                                     £0.00 
                                 </div>
                                 <span className="Unpaid">
-                                    <ErrorOutlineOutlinedIcon />
+                                    <ErrorOutlineOutlinedIcon style={{color: "green"}} />
                                 </span>
                             </div>
                         </div>
