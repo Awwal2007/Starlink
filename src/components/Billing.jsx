@@ -89,7 +89,7 @@ const Billing = () => {
                 <div className='billing-box'>
                     <div style={{display: "flex"}}>
                         <div style={{flexGrow: "2"}}>
-                            <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Balance Due <div>16/12/2025</div> </h2>
+                            <h2 style={{fontSize: "15px", fontWeight: "400", marginBottom: "20px"}}>Balance Due - 16/12/2025 </h2>
                             <div className="balance-amount">
                                 <div style={{display: 'inline', marginRight:"8px"}}>
                                     £0.00 
