@@ -4,6 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./css/Home.css"
 
+import logo from "../assets/logo_white.png"
 import heroimg from "../assets/home_b_hero_d.webp"
 import conectImage from "../assets/imgi_16_home_b_feature1_d.webp"
 import starlinkImage from "../assets/IMG-20250707-WA0260.jpg"
@@ -18,10 +19,10 @@ const Home = () => {
             1 month of FREE service upon activation between May 20th and June 16th. Residential plans only.
         </div>
 
-        <section style={{backgroundImage: `url(${heroimg})`, backgroundAttachment: "", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundColor: "black"}}>
+        <section style={{background: `url(${heroimg})`, backgroundAttachment: "", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundColor: "black"}}>
             <nav className="navbar">
                 <div className="navbar-left">
-                    <img className="logo" src="/img/logo_white.png" alt="Starlink"/>
+                    <img className="logo" src={logo} alt="Starlink"/>
                     <ul className="nav-links-left">
                     <li><a href="#" className="active">RESIDENTIAL</a></li>
                     <li><a href="#">ROAM</a></li>

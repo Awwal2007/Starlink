@@ -53,7 +53,6 @@ const AppContent = () => {
     return (
       <>
         {!shouldHideHeader && <Navbar />}
-        {!shouldHideFooter && <Footer />}
 
         <AuthProvider>
           <Routes>
@@ -82,6 +81,7 @@ const AppContent = () => {
           closeButton
           visibleToasts={1}
           />
+          {!shouldHideFooter && <Footer />}
           {/* <Footer /> */}
         </AuthProvider>
 
