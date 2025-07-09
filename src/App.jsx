@@ -29,6 +29,18 @@ const AppContent = () => {
     '/billing',
     '/'
   ];
+  const hideFooterRoutes = [
+    '/'
+  ];
+
+  const shouldHideFooter = hideFooterRoutes.some((route) => {
+    if (route.includes(':')) {
+      // Convert "/admin-message/:userId" to a regex like /^\/admin-message\/[^\/]+$/
+      const pattern = new RegExp('^' + route.replace(/:[^/]+/g, '[^/]+') + '$');
+      return pattern.test(location.pathname);
+    }
+    return route === location.pathname;
+  });
 
   const shouldHideHeader = hideHeaderRoutes.some((route) => {
     if (route.includes(':')) {
@@ -41,6 +53,7 @@ const AppContent = () => {
     return (
       <>
         {!shouldHideHeader && <Navbar />}
+        {!shouldHideFooter && <Footer />}
 
         <AuthProvider>
           <Routes>
@@ -69,7 +82,7 @@ const AppContent = () => {
           closeButton
           visibleToasts={1}
           />
-          <Footer />
+          {/* <Footer /> */}
         </AuthProvider>
 
         

@@ -8,11 +8,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     min-height: 100vh;
-    /* background: transparent !important; */
-    
     line-height: 1.6;
-    z-index: 20;
-
 }
 
 .top-banner {

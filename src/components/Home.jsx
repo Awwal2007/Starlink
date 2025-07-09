@@ -9,6 +9,7 @@ import conectImage from "../assets/imgi_16_home_b_feature1_d.webp"
 import starlinkImage from "../assets/IMG-20250707-WA0260.jpg"
 import background from "../assets/imgi_41_home_illustriation2_d.webp"
 import flexible from "../assets/IMG-20250707-WA0254.jpg"
+import engineerImg from "../assets/home_feature3_d.webp"
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
             1 month of FREE service upon activation between May 20th and June 16th. Residential plans only.
         </div>
 
-        <section style={{backgroundImage: `url(${heroimg})`, backgroundAttachment: "", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
+        <section style={{backgroundImage: `url(${heroimg})`, backgroundAttachment: "", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundColor: "black"}}>
             <nav className="navbar">
                 <div className="navbar-left">
                     <img className="logo" src="/img/logo_white.png" alt="Starlink"/>
@@ -148,12 +149,12 @@ const Home = () => {
             </section>
 
             
-            <section className="service-plans-section">
+            <section style={{backgroundColor: "transparent"}}  className="service-plans-section">
                 <div className="container-fluid px-0">
-                    <div style={{backgroundColor: "transparent"}} className="row g-0 align-items-center">
+                    <div className="row g-0 align-items-center">
                     
                     
-                        <div  className="col-lg-6 d-flex align-items-center justify-content-center text-section">
+                        <div style={{backgroundColor: "transparent"}}  className="col-lg-6 d-flex align-items-center justify-content-center text-section">
                             <div className="text-white px-5 py-4 w-100" style={{maxWidth: "600px"}}>
                             <h2 className="mb-3 fw-bold">FLEXIBLE SERVICE PLANS</h2>
                             <p className="mb-0">Starlink offers flexible service plans everywhere. Check availability by entering your address <a href="#" className="text-decoration-underline text-white fw-semibold">here</a>.</p>
@@ -170,7 +171,7 @@ const Home = () => {
             </section>
 
             
-            <section className="engineered-section d-flex align-items-center text-white">
+            <section style={{background: `url(${engineerImg})`}} className="engineered-section d-flex align-items-center text-white">
                 <div className="container">
                     <div className="row">
                     <div className="col-lg-6">
