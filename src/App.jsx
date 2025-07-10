@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom"
 import { Toaster } from "sonner";
 import Navbar from "./components/Navbar";
 import SigninForm from "./components/signInForm";
-import AuthProvider from "./contexts/AuthContext";
+import AuthProvider from "./contexts/AuthProvider";
 import "./App.css"
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
@@ -16,6 +16,7 @@ import AdminMessage from "./components/AdminMessage";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Billing from "./components/Billing";
 import Home from "./components/Home";
+import Unauthorized from "./components/Unauthorized";
 const AppContent = () => {
   const location = useLocation();
   const hideHeaderRoutes = [
@@ -58,21 +59,31 @@ const AppContent = () => {
           <Routes>
             <Route path="/signIn"  element={<SigninForm />}/>
             <Route path="/"  element={<Home />}/>
-            <Route path="/dashboard"  element={<Dashboard />}/>
-            <Route path="/subscription" element={<Subscription />} />
-            <Route path="/order" element={<Order />} />
             <Route path="/admin-login" element={<AdminLoginForm />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/admin-message/:userId" element={<AdminMessage />} />
-            <Route path="/billing" element={<Billing />} />
+            <Route path="/unauthorized" element={<Unauthorized/>} />
 
-            <Route element={<ProtectedRoutes />}>
+            <Route element={<ProtectedRoutes requiredRole="seller" />}>
               <Route path="/message" element={<Message />} >
                 <Route path="new-ticket/" element={<NewTicket />} />
               </Route>
+
+              <Route path="/subscription" element={<Subscription />} />
+              <Route path="/order" element={<Order />} />
+              <Route path="/billing" element={<Billing />} />
+              <Route path="/dashboard"  element={<Dashboard />}/>
+
+              <Route />
             </Route>
 
-            <Route path="*" element={<h1>Page not found</h1>} />
+            <Route element={<ProtectedRoutes requiredRole="admin" />}>
+              
+              <Route path="/admin-message/:userId" element={<AdminMessage />} />
+              <Route path="/admin" element={<Admin />} />
+
+            </Route>
+
+
+            <Route path="*" element={<h1 style={{marginTop: "100px", textAlign: "center"}}>Page not found</h1>} />
           </Routes>
 
           <Toaster

@@ -36,7 +36,9 @@ const Home = () => {
       scrolled ? 'scrolled' : 'transparent'
     }`}>
                 <div className="navbar-left">
-                    <img className="logo" src={logo} alt="Starlink"/>
+                    <Link>
+                        <img className="logo" src={logo} alt="Starlink"/>
+                    </Link>
                     <ul className="nav-links-left">
                     <li><a href="#" className="active">RESIDENTIAL</a></li>
                     <li><a href="#">ROAM</a></li>
@@ -208,7 +210,7 @@ const Home = () => {
 
                     <div className="row justify-content-center align-items-center mb-3">
                     <div className="col-md-6 col-lg-4">
-                        <label for="addressInput" className="form-label text-white text-start d-block">Service Address</label>
+                        <label htmlFor="addressInput" className="form-label text-white text-start d-block">Service Address</label>
                         <div className="input-group">
                         <input type="text" className="form-control" id="addressInput" placeholder="TYPE AND SELECT"/>
                         <span className="input-group-text bg-dark text-white"><i className="bi bi-arrow-repeat"></i></span>

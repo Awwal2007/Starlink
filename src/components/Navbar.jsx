@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from './MediaQuery';
+import { Link } from 'react-router-dom';
 
 import logo from "../assets/logo_white.png"
 
@@ -12,7 +13,9 @@ const Navbar = () => {
     <div className='nav-container'>
         <div className='nav-side-1'>
             {/* <h2>STARLINK</h2> */}
-            <img style={{height: "30px"}} src={logo} alt="" />
+            <Link to="/">
+                <img style={{height: "30px"}} src={logo} alt="" />
+            </Link>
         </div>
         {/* <div className='nav-side-2'>
             <a className='nav-link' href="">RESIDENTIAL</a>

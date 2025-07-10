@@ -1,13 +1,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { jwtDecode } from 'jwt-decode';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, } from 'react-router-dom';
 import { toast } from 'sonner';
 
 import CircularProgress from '@mui/material/CircularProgress';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
-import { authContext } from '../contexts/AuthContext';
 
 
 const AdminMessage = () => {
@@ -20,11 +19,8 @@ const AdminMessage = () => {
     const chatRef = useRef(null);
     const baseUrl = import.meta.env.VITE_BASE_URL;
     // Decode user profile initials
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     useEffect(() => {
-      if(!authContext){
-        navigate("/admin-login")
-      }
       const token = JSON.parse(localStorage.getItem('accessToken'));
       if (token) {
           try {
@@ -46,7 +42,7 @@ const AdminMessage = () => {
       // const intervalId = setInterval(fetchAdminMessages, 1000)
       // return () => clearInterval(intervalId);
          
-    }, [userId]);
+    }, []);
 
       // Fetch chat history
       const fetchAdminMessages = async () => {

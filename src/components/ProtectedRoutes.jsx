@@ -1,22 +1,33 @@
-import { useContext, useEffect } from "react"
-import { Navigate, Outlet, useNavigate } from "react-router-dom"
+import {useEffect } from "react"
+// import { jwtDecode } from 'jwt-decode';
+import { Outlet, useNavigate, Navigate } from "react-router-dom"
 import { toast } from "sonner"
-import { authContext } from "../contexts/AuthContext"
+import { useAuth } from "../hooks/useAuth"
 
-const ProtectedRoutes = () => {
-    // get access token form loacl storage
-    const {isAuthenticated} = useContext(authContext)
-    const isAuth = isAuthenticated() // true || false
-    const navigate = useNavigate()
+const ProtectedRoutes = ({requiredRole}) => {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  const authStatus = isAuthenticated();
 
-    useEffect(()=>{
-        if(!isAuth){
-            toast.warning("You have to be logged in")
-            navigate("/")
-        }
-    },[isAuth, navigate])
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    
+    if (!authStatus) {
+      toast.warning("You have to be logged in");
+      navigate("/signin");
+    }
+    const payload = JSON.parse(atob(JSON.parse(token).split('.')[1]));
+    if (payload.role !== requiredRole) {
+      // console.log(payload);
+      
+      toast.warning("You are not allowed");
+       navigate("/unauthorized")
+    }
+  }, [authStatus, navigate, requiredRole]);
 
-    return isAuth ? <Outlet /> : null
-}
+  if (!authStatus) return null; // or a loading spinner
+  return <Outlet />;
+};
+
 
 export default ProtectedRoutes

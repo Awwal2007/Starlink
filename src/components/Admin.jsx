@@ -16,10 +16,7 @@ import home from '../assets/home.svg'
 const Admin = () => {
     const [profile, setProfile] = useState("")
     const [messages, setMessages] = useState([]);
-    const baseUrl = import.meta.env.VITE_BASE_URL;
-
-    
-    
+    const baseUrl = import.meta.env.VITE_BASE_URL;   
     
       useEffect(()=>{
         const token = JSON.parse(localStorage.getItem("accessToken"));
@@ -54,7 +51,7 @@ const Admin = () => {
         };
 
         fetchMessages();
-      },[]);
+      },[baseUrl]);
 
 
   return (

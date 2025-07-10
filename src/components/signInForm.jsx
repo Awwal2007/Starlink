@@ -1,12 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "../App.css";
-
-import { authContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 const SigninForm = () => {
 
-    const { signin, signingIn } = useContext(authContext);
+    const { signin, signingIn } = useAuth();
     const navigate = useNavigate();
     const defaultData = {
         email: "",

@@ -21,6 +21,8 @@ import billing from '../assets/billing.svg'
 import message from '../assets/message.svg'
 import settings from '../assets/settings.svg'
 
+import logo from "../assets/logo_white.png"
+
 import useMediaQuery from './MediaQuery';
 
 
@@ -47,8 +49,8 @@ const DashNav = ({dashboardP, messageP, orderP, subscriptionP, billingP }) => {
   return (
     <>
       <div  className="topbar">
-            <Link to='/dashboard' style={{flex:"1", fontWeight: "700", fontSize: "25px", marginLeft: "25px", textDecoration: "none", color:"white"}}>
-                STARLINK
+            <Link to='/' style={{flex:"1", fontWeight: "700", fontSize: "25px", marginLeft: "25px", textDecoration: "none", color:"white"}}>
+              <img style={{height: "20px"}} src={logo} alt="" />
             </Link>
             {isMobile? "": 
               <div className='topbar-middle'>

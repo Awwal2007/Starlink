@@ -20,7 +20,7 @@ const Message = () => {
         } else {
             setShowModal(false);
         }
-    }, [window.location.pathname]);
+    },[] );
 
     const openModal = () => navigate("new-ticket");
     const tickets = [

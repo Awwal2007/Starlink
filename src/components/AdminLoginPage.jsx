@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "../App.css";
-import { authContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 const AdminLoginForm = () => {
-    const { signin, singingIn } = useContext(authContext);
+    const { signin, singingIn } = useAuth();
     const [signingIn, setSigningIn] = useState(false)
     const navigate = useNavigate();
     const defaultData = {
