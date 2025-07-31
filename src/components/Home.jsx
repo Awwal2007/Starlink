@@ -47,7 +47,7 @@ const Home = () => {
             
                 <div className="navbar-right">
                     <ul className="nav-links-right">
-                    <li><a href="#">PERSONAL</a></li>
+                    <li><a href="https://www.starlinkuk.com/">PERSONAL</a></li>
                     <li className="nav-divider">|</li>
                     <li><a href="#">BUSINESS</a></li>
                     </ul>
