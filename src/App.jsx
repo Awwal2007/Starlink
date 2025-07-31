@@ -28,7 +28,8 @@ const AppContent = () => {
     '/admin',
     '/admin-message/:userId',
     '/billing',
-    '/'
+    '/',
+    '/new-ticket'
   ];
   const hideFooterRoutes = [
     '/'
@@ -63,9 +64,9 @@ const AppContent = () => {
             <Route path="/unauthorized" element={<Unauthorized/>} />
 
             <Route element={<ProtectedRoutes requiredRole="seller" />}>
-              <Route path="/message" element={<Message />} >
-                <Route path="new-ticket/" element={<NewTicket />} />
-              </Route>
+
+              <Route path="/message" element={<Message />} />
+              <Route path="/new-ticket" element={<NewTicket />} />
 
               <Route path="/subscription" element={<Subscription />} />
               <Route path="/order" element={<Order />} />

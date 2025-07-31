@@ -15,14 +15,14 @@ const Message = () => {
 
     useEffect(() => {
         // Show modal if the current URL ends with "new-ticket"
-        if (window.location.pathname.endsWith("new-ticket")) {
+        if (window.location.pathname.endsWith("/new-ticket")) {
             setShowModal(true);
         } else {
             setShowModal(false);
         }
     },[] );
 
-    const openModal = () => navigate("new-ticket");
+    const openModal = () => navigate("/new-ticket");
     const tickets = [
         {
             title: "Internet",
