@@ -9,14 +9,16 @@
   font-weight: normal;
   font-style: normal;
 }
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
 body {
   font-family: 'DIN_Regular', Roboto, Arial, Verdana, Geneva, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #000;
   color: #fff;
-  overflow-y: auto;
-  overflow-x: auto;
 }
 
 .nav-container{
