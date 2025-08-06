@@ -66,9 +66,12 @@ const AuthProvider = ({ children }) => {
         body: JSON.stringify(formData),
       });
       const { message, accessToken, status, user } = await res.json();
+      console.log(status);
+      
       if (status === "success") {
         toast.success(message);
         localStorage.setItem("accessToken", JSON.stringify(accessToken));
+        localStorage.setItem("user", JSON.stringify(user));
         if (user.role === "admin") {
           navigate("/admin");
         } else {

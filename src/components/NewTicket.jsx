@@ -257,7 +257,9 @@ const NewTicket = () => {
   const fetchUserMessages = async () => {
       try {
         const token = JSON.parse(localStorage.getItem('accessToken'));
-        const res = await fetch(`${baseUrl}/message/user-messages`, {
+        const user = JSON.parse(localStorage.getItem('user'))
+        const userId = user._id
+        const res = await fetch(`${baseUrl}/message/user-messages/${userId}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -338,6 +340,8 @@ const NewTicket = () => {
   const fetchAdminMessages = async () => {
     try {
       const token = JSON.parse(localStorage.getItem('accessToken'));
+      const user = JSON.parse(localStorage.getItem('user'))
+      const userId = user._id
 
       const res = await fetch(`${baseUrl}/message/admin-messages/${userId}`, {
         method: 'GET',
