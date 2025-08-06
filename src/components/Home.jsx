@@ -11,20 +11,48 @@ import starlinkImage from "../assets/IMG-20250707-WA0260.jpg"
 import background from "../assets/imgi_41_home_illustriation2_d.webp"
 import flexible from "../assets/IMG-20250707-WA0254.jpg"
 import engineerImg from "../assets/home_feature3_d.webp"
+import { useAuth } from '../hooks/useAuth'
+import { jwtDecode } from 'jwt-decode'
+
 
 const Home = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [profile, setProfile] = useState({});
+    const {isAuthenticated, logout} = useAuth();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      setScrolled(offset > 50); // Change `50` to whatever threshold you want
-    };
+    const authStatus = isAuthenticated();
 
-    window.addEventListener('scroll', handleScroll);
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            setScrolled(offset > 50); // Change `50` to whatever threshold you want
+        };
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+  useEffect(()=>{
+    const token = localStorage.getItem("accessToken");
+    if(token){
+        try {
+            const decoded = jwtDecode(token)
+            const fullname = decoded.name
+            const [first, last] = fullname.split(" ");
+            const userProfile = `${first?.[0] || ""}${last?.[0] || ""}`.toUpperCase();
+            const userData = {
+                fullname: fullname,
+                email: decoded.email,
+                id: decoded.id,
+                userProfile: userProfile
+            }
+            setProfile(userData)
+        } catch (error) {
+            console.error("Invalid token:", error);
+        }
+    }
+},[]);
   return (
     <div className='body' style={{backgroundImage: `url(${background})`, backgroundAttachment: "fixed", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
         {/* <div className="top-banner">
@@ -40,14 +68,14 @@ const Home = () => {
                         <img className="logo" src={logo} alt="Starlink"/>
                     </Link>
                     <ul className="nav-links-left">
-                    <li><a href="#" className="active">RESIDENTIAL</a></li>
-                    <li><a href="#">ROAM</a></li>
+                    <li><a href="https://www.starlink.com/gb/residential" className="active">RESIDENTIAL</a></li>
+                    <li><a href="https://www.starlink.com/gb/roam">ROAM</a></li>
                     </ul>
                 </div>
             
                 <div className="navbar-right">
                     <ul className="nav-links-right">
-                    <li><a href="https://www.starlinkuk.com/">PERSONAL</a></li>
+                    <li><a href="https://www.starlink.com/gb">PERSONAL</a></li>
                     <li className="nav-divider">|</li>
                     <li><a href="#">BUSINESS</a></li>
                     </ul>
@@ -62,13 +90,42 @@ const Home = () => {
             <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div className="offcanvas-header">
                     <h5 className="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button style={{background: "orange", color: ""}} type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">x</button>
                 </div>
                 
                 <div className="offcanvas-body">
                     <ul className="offcanvas-menu">
                     <li><a href="#">US</a></li>
-                    <li><Link to="/signin">SIGN IN</Link></li>
+                    {authStatus && profile && (
+                        <>
+                            <li  >
+                                <Link to="/dashboard" style={{display: "flex", fontSize: "15px"}} className='profile-info'>
+                                    <span className='profile' style={{marginRight: "20px"}}>
+                                        {profile.userProfile || "??"}   
+                                    </span>
+                                    <div>
+                                        <div>{profile.fullname}</div>
+                                        <div>{profile.email}</div>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/dashboard'>
+                                    DASHBOARD
+                                </Link>
+                            </li>
+                        </>
+                    )}
+
+                    {!authStatus?
+                        <li><Link to="/signin">SIGN IN</Link></li>
+                                    :
+                        <li><Link onClick={logout} >SIGN OUT</Link></li>
+                    }
+                    
+                    {!authStatus && !profile &&
+                        <li><Link to="/dashboard">MY ACCOUNT</Link></li>
+                    }
                     <li><a href="#">HELP CENTER</a></li>
                     <li><a href="#">AVAILABILITY MAP</a></li>
                     <li><a href="#">SPECIFICATIONS</a></li>
@@ -91,8 +148,8 @@ const Home = () => {
             <section className="plans-section">
                 <div className="plan-card">
                     <h2>RESIDENTIAL</h2>
-                    <p>Connect at home with reliable high-speed internet for your household.</p>
-                    <p className="price">Starting at <strong>NGN57,000/mo</strong> for service</p>
+                    <p>Connect at home</p>
+                    <p className="price">Starting at <strong>£75/mo</strong> for service</p>
                     <div className="card-buttons">
                         <a href="#" className="btn primary">ORDER NOW</a>
                         <a href="#" className="btn secondary">LEARN MORE</a>
@@ -100,8 +157,8 @@ const Home = () => {
                 </div>
                 <div className="plan-card">
                     <h2>ROAM</h2>
-                    <p>Connect while traveling anywhere in over 100 markets across the globe.</p>
-                    <p className="price">Starting at <strong>NGN38,000/mo</strong> for service</p>
+                    <p>Connect while traveling anywhere in over 100 markets</p>
+                    <p className="price">Starting at <strong>£75/mo</strong> for service</p>
                     <div className="card-buttons">
                         <a href="#" className="btn primary">ORDER NOW</a>
                         <a href="#" className="btn secondary">LEARN MORE</a>

@@ -20,16 +20,19 @@ import subscription from '../assets/subscription.png'
 import billing from '../assets/billing.svg'
 import message from '../assets/message.svg'
 import settings from '../assets/settings.svg'
+import { FiLogOut } from "react-icons/fi";
 
 import logo from "../assets/logo_white.png"
 
 import useMediaQuery from './MediaQuery';
+import { useAuth } from '../hooks/useAuth';
 
 
 const DashNav = ({dashboardP, messageP, orderP, subscriptionP, billingP }) => {
   // const [active, setActive] = useState("")
   const [profile, setProfile] = useState("")
   const isMobile = useMediaQuery('(max-width: 750px)')
+  const {logout} = useAuth()
   useEffect(()=>{
     const token = localStorage.getItem("accessToken");
     if(token){
@@ -103,6 +106,11 @@ const DashNav = ({dashboardP, messageP, orderP, subscriptionP, billingP }) => {
                 <img className='icon-white' src={settings} alt="" />
                 <div id="d-none" style={{ marginLeft: "15px", color: "var(--icon-color)"}}>Settings</div>
             </Link>
+            <div style={{cursor: "pointer"}} onClick={logout} className={`${""} button`}>
+                <FiLogOut  style={{color: "var(--icon-color)", }} />
+                {/* <img className='icon-white' src={l} alt="" /> */}
+                <div id="d-none" style={{ marginLeft: "15px", color: "var(--icon-color)"}}>Logout</div>
+            </div>
         </div>
 
 

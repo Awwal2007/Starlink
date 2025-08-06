@@ -24,6 +24,9 @@ import DashNav from './DashNav';
 import useMediaQuery from './MediaQuery';
 
 const Dashboard = () => {
+        const token = JSON.parse(localStorage.getItem("accessToken"));
+       const payload = JSON.parse(atob(token.split(".")[1]));
+       const fullname = payload.name
     const isMobile = useMediaQuery('(max-width: 768px)')
   return (
     <div className='dashboard'>
@@ -47,7 +50,8 @@ const Dashboard = () => {
                 </Link>
             </div>
             <h1 style={{marginBottom: "15px"}}>Home</h1>
-            <p>Muhammad Amir • ACC-3046416-28749-19</p>
+            {/* <p>Muhammad Amir • ACC-3046416-28749-19</p> */}
+            <p>{fullname ? fullname : '??' } • ACC-3046416-28749-19</p>
 
             <div className="balance-box">
                 <div style={{flexGrow: "2"}}>

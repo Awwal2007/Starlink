@@ -147,7 +147,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("accessToken");
     toast.success("Logged out successfully");
-    navigate("/login");
+    navigate("/");
   };
 
 
