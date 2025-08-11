@@ -266,6 +266,7 @@ const AdminMessage = () => {
             name="message"
             type="text"
             placeholder="Enter a message"
+            required
           />
           {sendingMessage ? (
             <CircularProgress size={24} style={{ marginLeft: '10px', color: '#fff' }} />
