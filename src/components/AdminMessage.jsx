@@ -172,6 +172,7 @@ const AdminMessage = () => {
         return;
         }
         sendMessage();
+        setMessageData({ message: '' });
     };
   return (
     <div>
